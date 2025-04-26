@@ -1,0 +1,12 @@
+start-dfs.sh
+start-yarn.sh
+
+jps             echo $SPARK_HOME
+
+scalac -cp 'home------------/jars/*' WordCount.scala
+
+jar cf WordCount.jar WordCount*.class
+
+spark-submit --class WordCOunt.jar file:///home----/input.txt file:///home--------/output
+
+cat ./output/part-00000

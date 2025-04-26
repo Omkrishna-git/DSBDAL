@@ -1,0 +1,16 @@
+start-dfs.sh
+start-yarn.sh
+
+jps
+
+javac -classpath $(hadoop classpath) WordCount.java
+
+jar cf WordCount.jar WordCount*.class
+
+hdfs dfs -rm -r /input /output
+hdfs dfs -mkdir /input
+hdfs dfs -put ./input.txt /input
+
+hadoop jar WordCount.jar WordCount /input/input.txt /output
+
+hdfs dfs -cat /output/part-r-00000

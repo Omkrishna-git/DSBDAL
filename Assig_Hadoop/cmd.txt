@@ -3,6 +3,10 @@ start-yarn.sh
 
 jps
 
+find /usr -name "hadoop*source*.jar"
+unzip ................
+jar xf ..............
+
 javac -classpath $(hadoop classpath) WordCount.java
 
 jar cf WordCount.jar WordCount*.class
@@ -14,3 +18,63 @@ hdfs dfs -put ./input.txt /input
 hadoop jar WordCount.jar WordCount /input/input.txt /output
 
 hdfs dfs -cat /output/part-r-00000
+
+
+
+
+start-dfs.sh
+start-yarn.sh
+
+jps
+
+find /usr -name "hadoop*source*.jar"
+jar xf ....................
+
+javac -classpath $(hadoop classpath) WordCount.java
+jar cf WordCount.jar WordCount*.class
+
+hdfs dfs -rm -r /input /output
+hdfs dfs -mkdir /input
+hdfs dfs -put ,/input.txt /input
+
+hadoop jar WordCount.jar WordCount /input.input.txt /output
+hdfs dfs -cat /output/part-r-00000
+
+
+start-def.sh
+start-yarn.sh
+
+jps
+
+find /usr -name "hadoop*source*.jar"
+unzip ....................
+
+javac -classpath $(hadoop classpath) WordCount.java
+jar cf WordCount.jar WordCount*.class
+
+hdfs dfs -rm -r /output /input
+hdfs dfs -mkdir /input
+hdfs dfs -put ./input.txt /input
+
+hadoop jar WordCount.jar /input/input.txt /output
+hdfs dfs -cat /output/part-r-00000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

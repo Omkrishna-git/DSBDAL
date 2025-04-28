@@ -1,12 +1,41 @@
 start-dfs.sh
 start-yarn.sh
 
-jps             echo $SPARK_HOME
+jps             
 
-scalac -cp 'home------------/jars/*' WordCount.scala
+echo $SPARK_HOME
+
+scalac -cp "$SPARK_HOME/jars/*" WordCount.scala
 
 jar cf WordCount.jar WordCount*.class
 
-spark-submit --class WordCOunt.jar file:///home----/input.txt file:///home--------/output
+spark-submit --class WordCount.jar file:///home----/input.txt file:///home--------/output
 
 cat ./output/part-00000
+
+
+
+start-dfs.sh
+start-yarn.sh
+
+jps
+
+scalac -cp echo '$SPARK_HOME/jars/*' WordCount.scala
+jar cf WordCount.jar WordCount*.class 
+spark-submit --class WordCount jar WordCount.jar /input /output
+
+cat ./output/part-00000
+
+
+
+
+
+start-dfs.sh
+start-yarn.sh
+
+jps
+
+saclac -cp "$SPARK_HOME/jars/*" WordCount.scala
+jar cf WordCount.jar WordCount*.class
+spark-submit --class WordCount WordCount.jar "file:///home/hadoopuser/scala/input.txt" "file:///home/hadoopuser/scala/output"
+cat ./output/part*

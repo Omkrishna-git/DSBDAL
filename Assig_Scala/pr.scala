@@ -9,7 +9,6 @@ object WordCount {
       .setMaster("local[*]") 
 
     val sc = new SparkContext(conf)
-
     val textFile = sc.textFile(args(0))
 
     val counts = textFile
